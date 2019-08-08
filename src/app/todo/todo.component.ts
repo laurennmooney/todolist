@@ -9,6 +9,18 @@ import { Todo } from '../interfaces/todo';
 export class TodoComponent implements OnInit {
   todoList: Todo[] = [
     {
+      task: "Drink a gallon of coffee",
+      completed: true
+    },
+    { 
+      task: "Question life choices",
+      completed: true
+    },
+    { 
+      task: "Cry a little",
+      completed: true
+    },
+    {
       task: "Complete lab 1, part 1",
       completed: true
     },
@@ -17,20 +29,24 @@ export class TodoComponent implements OnInit {
       completed: false
     },
     {
-      task: "Relax a little",
+      task: "Relax, maybe?",
       completed: false
     },
     {
       task: "Practice some code, man",
+      completed: true
+    },
+    {
+      task: "Clean my room",
       completed: false
     },
-    { 
-      task: "Dishes",
-      completed: true
-    }
   ];
 
   constructor() { }
+
+  removeItem(index: number): void {
+    this.todoList.splice(index, 1);
+  }
 
   ngOnInit() {
   }

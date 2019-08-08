@@ -6,9 +6,9 @@ body {
 
 main {
     background: white;
-    width: 80vw;
-    margin: 10px;
-    padding: 10px 15px;
+    width: 70vw;
+    margin: 20px;
+    padding: 20px 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
@@ -16,6 +16,13 @@ main {
 header, section {
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+label {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
 }
 
 h4 {
@@ -27,38 +34,44 @@ h4 {
     margin: 5px 0 8px 0;
 }
 
-input, button {
-    height: 30px;
-    border-radius: 5px;
-    margin: 3px 0;
-}
-
 .todoItem {
     position: relative;
     display: flex;
     align-items: center;
     padding: 0;
+    margin: 2px 0;
+    height: 35px;
     font-size: 14px;
 }
 
-.task {
-    padding: 2px;
+ol {
+    padding-left: 5px;
+    margin-left: 20px;
 }
 
 .taskCompleted {
     text-decoration: line-through;
+    margin-left: 5px;
 }
 
-.fa-times {
+.remove_button {
     position: absolute;
     right: 0;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 4px;
+    color: #bbb;
+}
+
+.fa-times:hover {
+    color: #ff0000;
 }
 
 .complete_button {
-    font-size: 10px;
+    font-size: 12px;
     margin: 0 5px;
-    padding: 2px;
-    height: 20px;
+    padding: 2px 5px;
+    height: 25px;
     border-radius: 3px;
     border: 1px solid;
     background: white;
@@ -66,17 +79,33 @@ input, button {
     cursor: pointer;
 }
 
+.complete_button:hover {
+    background: #ff5858;
+    color: #eee;
+}
+
 input {
     border: solid 1px #eee;
     padding: 0 10px;
     color: #bbb;
-    font-weight: bold;
+    font-size: 18px;
+    height: 40px;
+    border-radius: 3px;
+    margin: 3px 0;
 }
 
 #add_button {
     background: #ff1493;
     border: none;
     color: white;
-    font-weight: bold;
     border: none;
+    cursor: pointer;
+    font-size: 20px;
+    height: 40px;
+    border-radius: 3px;
+    margin: 3px 0;
+}
+
+#add_button:hover {
+    background: #bbb;
 }

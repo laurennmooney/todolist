@@ -3,19 +3,21 @@
     <header>
       <h4>TODO List</h4>
       <p class="subtitle">A place to store your to-dos</p>
-      <input type="text" placeholder="Filter your to-dos" />
+      <label for="filter">Filter To Dos</label>
+      <input type="text" placeholder="Filter your to-dos" name="filter" />
     </header>
-    <div *ngFor='let todo of todoList; index as i'>
+    <ol>
+      <li *ngFor='let todo of todoList; index as i'>
         <div class="todoItem">
-            <p>{{ i + 1 }}.</p>
-            <button *ngIf="!todo.completed" class="complete_button">Complete</button>
-            <p class="task" [ngClass]="{'taskCompleted':todo.completed}">{{ todo.task }}</p>
-            <i class="fa fa-times" (click)="removeTask()"></i>
+          <button *ngIf="!todo.completed" class="complete_button">Complete</button>
+          <p [ngClass]="{'taskCompleted':todo.completed}">{{ todo.task }}</p>
+          <i class="fa fa-times remove_button" (click)="removeItem(i)"></i>
         </div>
-    </div>
+    </ol>
     <section>
-    <input type="text" placeholder="Add your to-do"/>
-    <button id="add_button">Add</button>
+        <label for="addToDo">Add To Do</label>
+      <input type="text" placeholder="Add your to-do" name="addToDo" />
+      <button id="add_button">Add</button>
     </section>
   </main>
 </body>
